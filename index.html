@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Góc Nhỏ — khám phá phụ kiện bàn học theo không gian và ngân sách. Website mẫu với tìm kiếm, bộ lọc, bộ gợi ý và giỏ hàng.">
+  <meta name="theme-color" content="#254c3b">
+  <title>Góc Nhỏ — Bàn nhỏ, cảm hứng lớn</title>
+  <link rel="icon" href="assets/images/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <div class="announcement">Một góc học tập vừa vặn, bắt đầu từ những điều nhỏ. <span>Website mẫu · Giá và chính sách minh họa</span></div>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Góc Nhỏ — Trang chủ"><img src="assets/images/mark.svg" alt="" width="34" height="34"><span>góc nhỏ<span class="brand-dot">.</span></span></a>
+      <nav aria-label="Điều hướng chính"><a href="#catalog">Cửa hàng</a><a href="#finder">Tìm bộ phù hợp</a><a href="#story">Câu chuyện</a></nav>
+      <button class="cart-button" id="open-cart" type="button" aria-haspopup="dialog">Giỏ hàng <span id="cart-count">0</span></button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow">CHO NHỮNG KHÔNG GIAN CỦA RIÊNG BẠN</p><h1 id="hero-title">Bàn nhỏ.<br><em>Cảm hứng lớn.</em></h1><p class="hero-description">Một chiếc đèn ấm, một góc bàn gọn.<br>Chọn những món vừa với không gian, vừa với bạn.</p><div class="hero-actions"><a class="button primary" href="#catalog">Khám phá cửa hàng <span aria-hidden="true">↗</span></a><a class="text-link" href="#finder">Tìm bộ đồ cho bàn của bạn →</a></div><div class="hero-note"><span class="tiny-mark" aria-hidden="true">✦</span> Đồ dùng nhỏ · Công năng rõ · Chọn mua có chủ đích</div></div>
+      <div class="hero-visual"><img src="assets/images/desk.svg" alt="Minh họa góc học tập với đèn xanh, giá đỡ laptop, sổ và cây trên bàn gỗ" width="800" height="650" fetchpriority="high"><span class="scene-label">GÓC HỌC TẬP / 01</span><div class="scene-caption"><span>Một chút gọn gàng.</span><strong>Nhiều chỗ cho ý tưởng.</strong></div></div>
+    </section>
+    <div class="benefits container"><p><span aria-hidden="true">↔</span> Chọn theo kích thước bàn</p><p><span aria-hidden="true">◉</span> Bộ đồ trong ngân sách</p><p><span aria-hidden="true">＋</span> So sánh trước khi chọn</p></div>
+    <section class="section container" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading"><div><p class="eyebrow">ÍT MÓN HƠN, ĐÚNG MÓN HƠN</p><h2 id="catalog-title">Những món cho góc của bạn</h2></div><p>Đẹp vừa đủ. Hữu ích mỗi ngày.</p></div>
+      <div class="category-tabs" role="group" aria-label="Danh mục sản phẩm"><button type="button" data-category="all" aria-pressed="true">Tất cả</button><button type="button" data-category="light" aria-pressed="false">Ánh sáng</button><button type="button" data-category="organize" aria-pressed="false">Sắp xếp</button><button type="button" data-category="focus" aria-pressed="false">Tập trung</button></div>
+      <form id="filters" class="filters" role="search"><label class="search-field"><span>Tìm sản phẩm</span><input id="search" type="search" placeholder="Thử “đèn”, “sổ”, “laptop”…" autocomplete="off"></label><label><span>Bàn của bạn</span><select id="desk-size"><option value="all">Mọi kích thước</option><option value="60">Bàn nhỏ · 60 cm</option><option value="80">Bàn vừa · 80 cm</option><option value="120">Bàn rộng · 120 cm</option></select></label><label><span>Mức giá tối đa</span><select id="max-price"><option value="all">Mọi mức giá</option><option value="100000">100.000 ₫</option><option value="200000">200.000 ₫</option><option value="300000">300.000 ₫</option></select></label><label><span>Sắp xếp</span><select id="sort"><option value="featured">Nổi bật</option><option value="price-asc">Giá tăng dần</option><option value="price-desc">Giá giảm dần</option><option value="name">Tên A–Z</option></select></label></form>
+      <div class="results-bar"><p id="results-count" role="status" aria-live="polite"></p><button type="button" class="plain-button" id="reset-filters">Đặt lại bộ lọc</button></div>
+      <div id="product-grid" class="product-grid"></div>
+      <div class="empty-state" id="empty-products" hidden><h3>Chưa tìm thấy món phù hợp</h3><p>Thử từ khóa ngắn hơn hoặc mở rộng mức giá và kích thước bàn.</p><button type="button" class="button primary" id="empty-reset">Xóa bộ lọc</button></div>
+      <div class="compare-bar" id="compare-bar" hidden><p id="compare-count"></p><div><button type="button" class="plain-button" id="clear-compare">Bỏ chọn</button><button type="button" class="button primary" id="open-compare">So sánh</button></div></div>
+    </section>
+    <section class="finder-section" id="finder" aria-labelledby="finder-title"><div class="container finder-layout"><div><p class="eyebrow">KHÔNG CẦN CHỌN TỪ ĐẦU</p><h2 id="finder-title">Một bộ nhỏ.<br>Vừa với bạn.</h2><p>Cho biết bàn và ngân sách. Góc Nhỏ sẽ chọn vài món khác công dụng, vừa với bàn của bạn.</p><p class="small">Gợi ý theo quy tắc đơn giản; kích thước bàn là tham khảo. Hãy kiểm tra số đo từng món trước khi mua.</p></div><div class="finder-panel"><form id="finder-form"><label><span>Chiều rộng bàn</span><select id="finder-size"><option value="60">60 cm · Gọn nhẹ</option><option value="80">80 cm · Vừa vặn</option><option value="120">120 cm · Rộng rãi</option></select></label><label><span>Ngân sách cho sản phẩm</span><select id="finder-budget"><option value="400000">400.000 ₫</option><option value="700000">700.000 ₫</option><option value="1000000">1.000.000 ₫</option></select></label><button type="submit" class="button primary">Tìm bộ phù hợp <span aria-hidden="true">↗</span></button></form><div id="finder-result" aria-live="polite"><p class="small">Bắt đầu với những món cần thiết: ánh sáng, sắp xếp và tập trung.</p></div></div></div></section>
+    <section class="section container story" id="story" aria-labelledby="story-title"><p class="eyebrow">CÂU CHUYỆN GÓC NHỎ</p><h2 id="story-title">Không gian tốt không cần quá lớn.</h2><p>Góc Nhỏ là concept cửa hàng dành cho sinh viên và người làm việc tại nhà. Chúng mình chọn đồ theo công dụng, kích thước và ngân sách để một chiếc bàn nhỏ vẫn đủ chỗ cho những ý tưởng lớn.</p><div class="story-facts"><div><strong>01</strong><span>Chọn theo nhu cầu</span></div><div><strong>02</strong><span>Đọc số đo thật kỹ</span></div><div><strong>03</strong><span>Giữ lại điều cần thiết</span></div></div></section>
+  </main>
+  <footer><div class="container footer-grid"><div><a class="brand" href="index.html">góc nhỏ.</a><p>Một góc của bạn.<br>Một chút cảm hứng mỗi ngày.</p></div><div><strong>Khám phá</strong><a href="#catalog">Tất cả sản phẩm</a><a href="#finder">Chọn bộ theo ngân sách</a><a href="#story">Về Góc Nhỏ</a></div><div><strong>Thông tin cửa hàng mẫu</strong><button type="button" data-policy="shipping">Giao hàng và đổi trả</button><button type="button" data-policy="privacy">Dữ liệu và quyền riêng tư</button><button type="button" data-policy="help">Hướng dẫn mua hàng</button></div></div><div class="container footer-bottom"><span>© 2026 Góc Nhỏ · Dự án học tập</span><span>Sản phẩm, giá và chính sách đều là dữ liệu minh họa.</span></div></footer>
+  <dialog id="product-dialog" aria-labelledby="product-title"><button type="button" class="close-dialog" data-close aria-label="Đóng chi tiết sản phẩm">×</button><div id="product-detail"></div></dialog>
+  <dialog id="cart-dialog" class="cart-dialog" aria-labelledby="cart-title"><button type="button" class="close-dialog" data-close aria-label="Đóng giỏ hàng">×</button><p class="eyebrow">NHỮNG MÓN BẠN ĐÃ CHỌN</p><h2 id="cart-title">Giỏ hàng của bạn</h2><div id="cart-items"></div><div id="cart-summary"></div><button type="button" class="button primary full-width" id="checkout-button">Tiếp tục đến bước đặt hàng mẫu →</button><p class="small">Đây là bản mẫu. Không thu tiền và không gửi đơn hàng.</p></dialog>
+  <dialog id="compare-dialog" aria-labelledby="compare-title"><button type="button" class="close-dialog" data-close aria-label="Đóng so sánh">×</button><h2 id="compare-title">So sánh món bạn chọn</h2><div id="compare-content" class="table-scroll"></div></dialog>
+  <dialog id="checkout-dialog" aria-labelledby="checkout-title"><button type="button" class="close-dialog" data-close aria-label="Đóng đặt hàng mẫu">×</button><p class="eyebrow">BƯỚC CUỐI · MÔ PHỎNG</p><h2 id="checkout-title">Kiểm tra bộ đồ của bạn</h2><div id="checkout-summary"></div><p>Không cần nhập thông tin cá nhân. Chọn cách nhận để thử quy trình; đơn hàng không được gửi đi.</p><form id="checkout-form"><label><span>Cách nhận hàng minh họa</span><select id="delivery-method" required><option value="">Chọn cách nhận</option><option value="ship">Giao hàng · Phí theo giỏ hàng</option><option value="pickup">Nhận tại cửa hàng mẫu · Miễn phí</option></select></label><label class="checkbox-row"><input type="checkbox" id="demo-consent" required><span>Tôi hiểu đây là đặt hàng mô phỏng.</span></label><p id="checkout-total" class="price"></p><button type="submit" class="button primary">Hoàn thành đặt hàng mẫu</button></form><div id="checkout-success" hidden role="status"></div></dialog>
+  <dialog id="policy-dialog" aria-labelledby="policy-title"><button type="button" class="close-dialog" data-close aria-label="Đóng thông tin">×</button><h2 id="policy-title"></h2><div id="policy-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="container">Hãy bật JavaScript để xem sản phẩm và sử dụng giỏ hàng. Bản mẫu cần JavaScript để hoạt động.</p></noscript>
+</body>
+</html>
